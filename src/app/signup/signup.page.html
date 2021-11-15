@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary" position="fixed">
+    <ion-icon name="arrow-back" [routerLink]="['/login']"></ion-icon>
+    <ion-title>
+      Signup
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+      <form>
+          <div>
+            <ion-item>
+              <ion-label position="fixed">FirstName:</ion-label>
+              <ion-input class="style" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="fixed">LastName:</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="fixed">Email:</ion-label>
+              <ion-input type="Email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="fixed">Password:</ion-label>
+              <ion-input type="Password"></ion-input>
+            </ion-item>
+          </div>
+          <ion-button class="button" type="Submit" shape="round">Signup</ion-button>
+      </form>
+    </ion-card>
+</ion-content>

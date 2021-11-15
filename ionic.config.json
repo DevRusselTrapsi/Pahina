@@ -1,0 +1,7 @@
+{
+  "name": "Pahina",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

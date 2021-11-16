@@ -1,34 +1,26 @@
-<ion-header>
-  <ion-toolbar color="primary" position="fixed">
-    <ion-icon name="arrow-back" [routerLink]="['/login']"></ion-icon>
-    <ion-title>
-      Signup
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true">
+  <div id="bg">
+    </div>
+  <ion-list lines="none" class="ion-margin ion-text-center">
+    <ion-list-header>CREATE NEW ACCOUNT</ion-list-header>
+    <ion-item class="ion-margin">
+      <ion-input placeholder="Name" type="text" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin">
+      <ion-input placeholder="Email" type="text" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin">
+      <ion-input placeholder="Username" type="text" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin">
+      <ion-input placeholder="Password" type="password" clearInput="true"></ion-input>
+    </ion-item>
+    <div align="right">
+      <ion-button shape="round" strong="true" class="ion-margin-end" color="medium">
+        SIGN UP
+        <ion-icon name="log-in" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-list>
 
-<ion-content>
-    <ion-card>
-      <form>
-          <div>
-            <ion-item>
-              <ion-label position="fixed">FirstName:</ion-label>
-              <ion-input class="style" type="text"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label position="fixed">LastName:</ion-label>
-              <ion-input type="text"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label position="fixed">Email:</ion-label>
-              <ion-input type="Email"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label position="fixed">Password:</ion-label>
-              <ion-input type="Password"></ion-input>
-            </ion-item>
-          </div>
-          <ion-button class="button" type="Submit" shape="round">Signup</ion-button>
-      </form>
-    </ion-card>
 </ion-content>

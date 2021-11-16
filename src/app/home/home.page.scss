@@ -1,27 +1,33 @@
-#container {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+
+#bg {
+  margin-top: -20%;
+  height: 20%;
+  background-color: #6f6c9e;
+  border-radius: 0 0 45% 50%;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+ion-list {
+  transform: translateY(21vh);
+  background: transparent;
+  font-family: 'Varela Round', sans-serif;
+  ion-list-header{
+    font-weight: 1000;
+    font-size: 2.5rem;
+    margin-top: 105%;
+  }
+  p {
+    font-family: 'Varela Round', sans-serif;
+  }
+  ion-button {
+    font-family: 'Varela Round', sans-serif;
+  }
+  }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+  #bg2 {
+  margin-top: -100%;
+  }
 
-  color: #8c8c8c;
 
-  margin: 0;
-}
 
-#container a {
-  text-decoration: none;
-}

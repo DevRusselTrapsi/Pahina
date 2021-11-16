@@ -1,26 +1,26 @@
-<ion-header>
-  <ion-toolbar color="primary" position="fixed">
-    <ion-icon name="arrow-back" [routerLink]="['/signup']"></ion-icon>
-    <ion-title>
-      Login
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true">
+  <div id="bg">
+    <ion-fab vertical="bottom" edge horizontal="center" slot="fixed">
+    <ion-fab-button color="medium" routerLink='/home'>
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  </div>
+  <ion-list lines="none" class="ion-margin">
+    <ion-list-header>WELCOME</ion-list-header>
+    <ion-item class="ion-margin">
+      <ion-input placeholder="Enter username" type="text" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin">
+      <ion-input placeholder="Enter password" type="password" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-text><p class="ion-margin-horizontal">Forgot Password?</p></ion-text>
+    <div align="right">
+      <ion-button shape="round" strong="true" class="ion-margin-end" color="medium">
+        SIGN IN
+        <ion-icon name="log-in" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-list>
 
-<ion-content>
-    <ion-card>
-      <form>
-          <div>
-            <ion-item>
-              <ion-label position="fixed">Email:</ion-label>
-              <ion-input type="Email"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label position="fixed">Password:</ion-label>
-              <ion-input type="Password"></ion-input>
-            </ion-item>
-          </div>
-          <ion-button class="button" type="Submit" shape="round">Signup</ion-button>
-      </form>
-    </ion-card>
 </ion-content>

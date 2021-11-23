@@ -1,1 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+ion-title{
+    text-align: center;
+}
+ion-col{
+    background-color: #6f6c9e;
+    font-size: 95%;
+    border-radius: 10px;
+
+}
+div{
+    background-color: #e7e7ee;
+    border-radius: 7px;
+    margin-top: 90px;
+    height: 360px;
+}
+ion-label{
+    color: black;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 20px;
+}
+ion-title{
+    color: #6f6c9e;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+}
+ion-button{
+    font-family: 'Varela Round', sans-serif;
+    margin-left: 250px;
+}

@@ -6,7 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./choices.page.scss'],
 })
 export class ChoicesPage implements OnInit {
-
+  public form =[
+    {val: 'Pepperoni',isChecked: false},
+    {val: 'Sausage',isChecked: false},
+    {val: 'Mushroom',isChecked: false}
+  ];
+  
   constructor() { }
 
   ngOnInit() {

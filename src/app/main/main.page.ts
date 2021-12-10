@@ -28,6 +28,18 @@ export class MainPage implements OnInit {
 
   }
 
+  search(){ 
+    this.api_login.findBook(this.search).subscribe((result:any) =>{  
+      console.log(this.search)
+      console.log(result)
+    },(error) => { 
+      console.error(error);
+    })   
+
+    this.router.navigate(['/home']);   
+  }
+  
+
   preview(value){ 
     this.api_login.previewBook(value).subscribe((result:any) =>{    
       this.api_repo.BookstoPreview = result 

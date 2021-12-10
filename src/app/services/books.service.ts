@@ -9,6 +9,10 @@ export class BooksService {
 
   API = "https://api.itbook.store"
   constructor(private http: HttpClient) { }
+
+  findBook(search){
+    return this.http.get(this.API+'/1.0/search'+search)
+  }
   
   Library(){  
     return this.http.get(this.API+'/1.0/new'); 

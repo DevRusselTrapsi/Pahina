@@ -39,6 +39,10 @@ const routes: Routes = [
     path: 'choices',
     loadChildren: () => import('./choices/choices.module').then( m => m.ChoicesPageModule)
   },
+  {
+    path: 'books-preview',
+    loadChildren: () => import('./modals/books-preview/books-preview.module').then( m => m.BooksPreviewPageModule)
+  },
 
 ];
 

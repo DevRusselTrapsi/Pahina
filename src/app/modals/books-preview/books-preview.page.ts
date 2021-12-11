@@ -17,11 +17,20 @@ export class BooksPreviewPage implements OnInit {
   constructor(private router: Router,  
     private api_login: BooksService,
     private api_repo: RepositoryService) {
-      this.BookToPreviewData = this.api_repo.BookstoPreview 
-      console.log(this.BookToPreviewData['authors'])
-      this.PDF = this.BookToPreviewData['pdf']
-      console.log(this.BookToPreviewData)
+     this.view(api_repo.BookstoPreview['isbn13']); 
     }
+  
+   view(isbn){
+    this.api_login.previewBook(isbn).subscribe((result:any) =>{   
+      this.BookToPreviewData = result 
+      console.log(this.BookToPreviewData)
+      this.PDF = result['pdf']
+    },(error) => { 
+      console.error(error);
+    })   
+
+  }
+  
  
 
   ngOnInit() {

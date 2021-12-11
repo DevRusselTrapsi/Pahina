@@ -1,9 +1,19 @@
-<ion-header>
+
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>booksPreview</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="main"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-img [src]="BookToPreviewData[0]['image']"></ion-img>
+      </ion-thumbnail>
+      <ion-label>{{BookToPreviewData[0]['desc']}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

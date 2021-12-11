@@ -1,27 +1,39 @@
 <ion-content [fullscreen]="true">
   <div id="bg">
     </div>
-  <ion-list lines="none" class="ion-margin ion-text-center">
-    <ion-list-header>CREATE NEW ACCOUNT</ion-list-header>
+    <ion-list lines="none" class="ion-margin ion-text-center">
+      
+      <ion-list-header>CREATE NEW ACCOUNT</ion-list-header>
+    <div>  
     <ion-item class="ion-margin">
-      <ion-input placeholder="Name" type="text" clearInput="true"></ion-input>
+      <ion-input name="name" id="name" placeholder="Name" type="text" clearInput="true" [(ngModel)]="name"></ion-input>
     </ion-item>
+    </div>
+    <div>  
+      <ion-item class="ion-margin">
+      <ion-input name="email" id="email" placeholder="Email" type="text" clearInput="true" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    </div>
+    <div>  
+      <ion-item class="ion-margin">
+      <ion-input name="username" id="username" placeholder="Username" type="text" clearInput="true" [(ngModel)]="username"></ion-input>
+    </ion-item>
+    </div>
+    <div>  
     <ion-item class="ion-margin">
-      <ion-input placeholder="Email" type="text" clearInput="true"></ion-input>
+      <ion-input name="password" id="password" placeholder="Password" type="password" clearInput="true" [(ngModel)]="password"></ion-input>
     </ion-item>
-    <ion-item class="ion-margin">
-      <ion-input placeholder="Username" type="text" clearInput="true"></ion-input>
-    </ion-item>
-    <ion-item class="ion-margin">
-      <ion-input placeholder="Password" type="password" clearInput="true"></ion-input>
-    </ion-item>
+    </div>
     <div align="center"> 
       <ion-button shape="round" strong="true" color="medium" routerLink='/home'>CANCEL</ion-button>
       <ion-button shape="round" strong="true" color="medium">
         SIGN UP
-        <ion-icon name="log-in" slot="end"></ion-icon>
+        <ion-icon type="submit" name="log-in" slot="end"></ion-icon>
       </ion-button>
     </div>
   </ion-list>
 
 </ion-content>
+
+
+

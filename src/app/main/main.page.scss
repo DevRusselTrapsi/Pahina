@@ -7,6 +7,11 @@ ion-title {
     font-family: 'Varela Round', sans-serif;
 }
 
+ion-item {
+    font-size: 1.3rem;
+    font-family: 'Varela Round', sans-serif;
+}
+
 ion-list {
     ion-list-header{
         font-weight: 1000;
@@ -15,3 +20,16 @@ ion-list {
     }
 }
 
+ion-card {
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+    margin: 0!important;
+    height: 100%;
+    ion-card-title{
+        font-size: 18px;
+        font-family: 'Varela Round', sans-serif;
+    }
+ }
+
+ 

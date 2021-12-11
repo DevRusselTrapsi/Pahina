@@ -11,8 +11,28 @@
   <ion-list>
     <ion-list-header>Discover</ion-list-header>
     <ion-toolbar>
-      <ion-searchbar placeholder="Search a book or author"></ion-searchbar>
+      <ion-searchbar (ionInput)=" this.search" placeholder="Search a book or author"></ion-searchbar>
     </ion-toolbar>
   </ion-list>
+
+  <ion-item>
+    <ion-label>Popular Books</ion-label>
+  </ion-item>
   
-</ion-content>
+  <ion-row>
+    <ion-col col-4 *ngFor="let books of NewBooks">
+       <ion-card>
+        <img src="{{books.image}}" />
+        <ion-card-header>
+          <ion-card-title>{{books.title}}</ion-card-title> 
+          <ion-card-subtitle>Price : {{books.price}}</ion-card-subtitle>
+        </ion-card-header>
+     
+    <ion-card-content class="ion-text-center"> 
+      <ion-button color="medium" slot="end" (click)="preview(books.isbn13)">Preview</ion-button> 
+    </ion-card-content>
+  </ion-card>
+ 
+  </ion-col>
+  </ion-row>
+  

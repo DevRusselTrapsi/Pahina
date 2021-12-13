@@ -1,12 +1,20 @@
-<ion-header class="ion-no-header">
-  <ion-toolbar>
-    <ion-title>Profile</ion-title>
-    <ion-buttons slot="start">
-      <ion-menu-button menu="main-menu"></ion-menu-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
+  
+  <div class="main_content_div">
+      <ion-buttons slot="start" class="menu_btn">
+        <ion-back-button defaultHref="main" color="light"></ion-back-button>
+      </ion-buttons>
+   
+  <div class="user_div">
+    <div class="first_div">
+      <ion-label class="username">Ange</ion-label>
+    </div>
+  <div class="user_back"[style.backgroundImage]=""></div>
 
+    </div>
+    
+  </div>
+
+ 
 </ion-content>

@@ -32,18 +32,13 @@ const routes: Routes = [
     path: 'profile',
     loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
   },
-  {
-    path: 'settings',
-    loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule)
-  },
-  {
-    path: 'choices',
-    loadChildren: () => import('./choices/choices.module').then( m => m.ChoicesPageModule)
-  },
+  
   {
     path: 'books-preview',
     loadChildren: () => import('./modals/books-preview/books-preview.module').then( m => m.BooksPreviewPageModule)
   },
+  
+
 
 ];
 

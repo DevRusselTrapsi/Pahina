@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  url: 'https://api.itbook.store'
+  url: 'https://api.itbook.store',
+  local: 'http://localhost:9100'
 };
 
 /*

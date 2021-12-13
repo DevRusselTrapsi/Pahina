@@ -1,52 +1,54 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServiceService } from '../services/service.service';
+import { FormControl  } from '@angular/forms';
+import { UserService } from '../services/user.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
-  username: any;
-  password: any;
+export class LoginPage implements OnInit{
+  username = '';
+  password = '';
   user: any;
 
   
-  constructor(private router: Router,
-              private http: HttpClient,
-              private _apiService: ServiceService)
-               { 
+  constructor(private router: Router, private userService: UserService, private toastController: ToastController) { }
 
-              }
   ngOnInit() {
+    //check if there is an existing account redirect to home
+    this.user = JSON.parse(localStorage.getItem('currentUser'));
+    console.log(this.user);
+    if(this.user){
+      this.router.navigate(['/home']);  
+    }
+  }
+
+  login(){
+  
+    this.userService.login(this.username, this.password)
+    .subscribe((result) => { 
+      if(result['data'].length != 1){
+        // do something if failed
+        this.presentToast('Incorrect username or password.')
+      }else{
+        // Success login 
+        this.presentToast('Welcome!')
+        this.router.navigate(['/main']);  
+      } 
+    });
 
   }
-  submit(){
 
-    //array of data 
-    let data = {
-      Username : this.username,
-      Password : this.password
-    }
-    
-    this._apiService.submit(data).subscribe((res:any) => {
-      //if response of login.php is not null then continue to home page
-      if(res != null){
-         localStorage.setItem('currentUser', JSON.stringify(res));
-         this.router.navigate(['/home']);  
-      }else{
-        //prevent local storage to duplicate
-        if(this.user == null){
-          this.router.navigate(['/login-page']);  
-        }else{
-          this.router.navigate(['/home']);  
-        }
-        
-      }
-  },(error: any) => {
-  console.log("ERROR ===",error);
-});
-}
+  async presentToast(message){
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 500
+    });
+    toast.present();
+
+  }
+
 }

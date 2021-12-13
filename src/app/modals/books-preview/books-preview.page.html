@@ -1,4 +1,3 @@
-
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -8,12 +7,46 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list>
-    <ion-item>
-      <ion-thumbnail slot="start">
-        <ion-img [src]="BookToPreviewData[0]['image']"></ion-img>
-      </ion-thumbnail>
-      <ion-label>{{BookToPreviewData[0]['desc']}}</ion-label>
-    </ion-item>
-  </ion-list>
+
+
+  <div class="container">
+    <div class="row center">
+      <img src="{{image}}" class="float-left rounded-circle" width="60%" height="auto">
+      <h3>{{title}}</h3>
+      <p>{{desc}}</p> 
+    </div>
+    <div class="row">
+      <hr> 
+      <details>
+        <summary>Details</summary>
+        <table class="table"> 
+          <tbody>
+            <tr><td>Author: <strong>{{authors}}</strong></td></tr> 
+            <tr><td>Publisher: <strong>{{publisher}}</strong></td></tr>
+            <tr><td>Price: <strong>{{price}}</strong></td></tr>
+            <tr><td>isbn13: <strong>{{isbn13}}</strong></td></tr>
+            <tr><td>isbn10: <strong>{{isbn10}}</strong></td></tr>
+            <tr><td>Rating: <strong>{{rating}}</strong></td></tr>
+            <tr><td>Year: <strong>{{year}}</strong></td></tr>
+          </tbody>
+        </table> 
+      </details>  
+
+    </div>
+
+    <div class="row" *ngIf="HavePreview"> 
+      <details>
+        <summary>Readable PDF</summary>
+        <p *ngFor="let pdfLink of PDFValues"><a href="{{pdfLink}}">{{pdfLink}}</a></p>
+      </details> 
+    </div>
+
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+  </div>
+ 
 </ion-content>

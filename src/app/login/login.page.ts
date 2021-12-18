@@ -8,10 +8,11 @@ import { ServiceService } from '../services/service.service';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
-  username: any;
-  password: any;
-  user: any;
+export class LoginPage implements OnInit 
+  {
+    username: any;
+    password: any;
+    user: any;
 
   
   constructor(private router: Router,
@@ -41,7 +42,7 @@ export class LoginPage implements OnInit {
         if(this.user == null){
           this.router.navigate(['/login-page']);  
         }else{
-          this.router.navigate(['/home']);  
+          this.router.navigate(['/home']);
         }
         
       }

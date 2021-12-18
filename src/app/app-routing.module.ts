@@ -5,7 +5,7 @@ const routes: Routes = [
   
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'profile',
     pathMatch: 'full'
   },
   {
@@ -35,10 +35,6 @@ const routes: Routes = [
   {
     path: 'settings',
     loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule)
-  },
-  {
-    path: 'choices',
-    loadChildren: () => import('./choices/choices.module').then( m => m.ChoicesPageModule)
   },
   {
     path: 'books-preview',

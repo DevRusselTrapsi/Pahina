@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';  
 import { BooksService } from '../services/books.service'; 
 import { RepositoryService } from '../services/repository.service';  
 
@@ -11,38 +11,43 @@ import { RepositoryService } from '../services/repository.service';
 })
 export class MainPage implements OnInit {
 
-  NewBooks = []
+  NewBooks = [] 
+  SearchStarted = false
+  SKeyword = ""
+  searchDummyNoUse = ""
 
   constructor(private router: Router,  
     private api_login: BooksService,
     private api_repo: RepositoryService) {
-      this.browse();
+      this.browse(); 
     }
 
   browse(){
     this.api_login.Library().subscribe((result:any) =>{   
       this.NewBooks = result['books'] 
+      this.SearchStarted = false;
     },(error) => { 
       console.error(error);
     })   
 
   }
 
-  search(){ 
-    this.api_login.findBook(this.search).subscribe((result:any) =>{  
-      console.log(this.search)
-      console.log(result)
-    },(error) => { 
-      console.error(error);
-    })   
 
-    this.router.navigate(['/home']);   
-  }
-  
+  search(q: string) {  
+      this.api_login.findBook(q).subscribe((result:any) =>{  
+        this.NewBooks = result['books'] 
+        this.SKeyword = q;
+        this.SearchStarted = true;
+      },(error) => { 
+        console.error(error);
+      })   
 
-  preview(value){ 
+      // this.router.navigate(['/home']);   
+  } 
+
+  preview(value){  
     this.api_login.previewBook(value).subscribe((result:any) =>{    
-      this.api_repo.BookstoPreview = result 
+      this.api_repo.BookstoPreview = result   
       this.presentModal()
     },(error) => { 
       console.error(error);

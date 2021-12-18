@@ -7,21 +7,20 @@
   </ion-fab>
   </div>
   
-  <ion-list lines="none" class="ion-margin">
-    <ion-list-header>WELCOME!</ion-list-header>
+  <ion-list lines="none" class="ion-margin"> 
+    <ion-list-header>Welcome to Pahina</ion-list-header>
     <div>
     <ion-item class="ion-margin">
-      <ion-input placeholder="Enter username" type="text" clearInput="true" id="username"  [(ngModel)]="username"></ion-input>
+      <ion-input type="text" placeholder="Enter username" [(ngModel)]="username" #name="ngModel"></ion-input>
     </ion-item>
     </div>
     <div>
     <ion-item class="ion-margin">
-      <ion-input placeholder="Enter password" type="password" clearInput="true" id="password"  [(ngModel)]="password"></ion-input>
+      <ion-input type="password" placeholder="Enter password" [(ngModel)]="password"></ion-input>
     </ion-item>
   </div>
-    <ion-text><p class="ion-margin-horizontal">Forgot Password?</p></ion-text>
     <div align="right">
-      <ion-button shape="round" strong="true" class="ion-margin-end" color="medium" (click)="submit()">
+      <ion-button shape="round" strong="true" class="ion-margin-end" color="medium" (click)="login()">
         SIGN IN
         <ion-icon name="log-in" slot="end"></ion-icon>
       </ion-button>

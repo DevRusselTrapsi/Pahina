@@ -36,10 +36,13 @@ const routes: Routes = [
     path: 'settings',
     loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule)
   },
+
   {
     path: 'books-preview',
     loadChildren: () => import('./modals/books-preview/books-preview.module').then( m => m.BooksPreviewPageModule)
   },
+  
+
 
 ];
 

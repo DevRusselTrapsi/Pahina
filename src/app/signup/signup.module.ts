@@ -16,6 +16,8 @@ import { SignupPage } from './signup.page';
     
 
   ],
-  declarations: [SignupPage]
+  declarations: [
+    SignupPage,
+  ]
 })
 export class SignupPageModule {}
